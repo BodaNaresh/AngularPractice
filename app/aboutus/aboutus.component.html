@@ -1,0 +1,20 @@
+<div style="text-align: center;">
+    <!-- ng If else -->
+
+<div *ngIf="isLoggedIn; else loggedOut">
+  Welcome back, u are logged in.
+</div>
+
+<ng-template #loggedOut>
+  Please login again
+</ng-template>
+    
+    <article>
+        <img src="D:\images\bhavna1.jpg" class="center" width="200px">
+        <p>Bhavna Corp is the best tech company to work for 2022</p>
+    </article>
+    <article>
+        <img src="D:\images\flag.jfif" class="center" width="300px">
+        <p>India is celebrating 75th independece day</p>
+    </article>
+</div>

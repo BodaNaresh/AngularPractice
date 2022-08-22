@@ -1,0 +1,48 @@
+<div class="div">
+    <h2>Students Data</h2>
+    <table class="center">
+        <thead>
+            <tr>
+                <th>ID</th>&nbsp;
+                <th>Name</th>&nbsp;
+                <th>City</th>&nbsp;
+                <th>Gender</th>&nbsp;
+                <th>Branch</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of studentList" >
+                <td>{{student.Id}}</td>&nbsp;
+                <td>{{student.Name}}</td>&nbsp;
+                <td>{{student.city}}</td>&nbsp;
+                <td>{{student.Gender}}</td>&nbsp;
+                <td>{{student.Branch}}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <h2>NgSwitch</h2>
+    <h3>Select Country</h3>
+    <select (change)="SetDropDownValue($event)">
+      <option value="">Select</option>
+      <option value="In">In</option>
+      <option value="AUS">AUS</option>
+      <option value="UK">UK</option>
+    </select>
+    <h4>You Have to Selected</h4>
+    <div [ngSwitch] = 'dropDownValue'>
+      <h5 *ngSwitchCase="'In'">India</h5>
+      <h5 *ngSwitchCase="'AUS'">Australia</h5>
+      <h5 *ngSwitchCase="'UK'">United Kingdom</h5>
+      <h5 *ngSwitchDefault="">You have not selected any country</h5>
+    </div>
+
+  <h4>NgStyle</h4>
+  <div *ngFor="let stu of studentList">
+     <p [ngStyle]="{'background-color':stu.Gender === 'Male' ? 'red' : 'green' }">
+    ID:  {{ stu.Id}} Name: {{ stu.Name }}  Gender:  {{stu.Gender}} Branch:  {{stu.Branch}}  
+     </p>
+   </div>
+</div>
+
